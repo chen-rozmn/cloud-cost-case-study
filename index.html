@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cloud Cost Management — Case Study</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&amp;family=Manrope:wght@500;600&amp;display=swap">
+<style>
+body{margin:0}
+.cc-divider:focus-visible .cc-handle{outline:3px solid #0284C7;outline-offset:4px}
+.cc-divider:hover .cc-handle{background:#EEF4FF !important}
+</style>
+</helmet>
+<div ref="{{rootRef}}" onScroll="{{onScroll}}" style="background: #FFFFFF; color: #0F172A; font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; {{rootScroll}}">
+<div style="container-type: inline-size">
+  <!-- OPENING -->
+<section style="box-sizing: border-box; padding: clamp(72px, 7.778cqw, 112px) clamp(24px, 3.333cqw, 48px) 0px; "><div style="max-width: 760px; margin: 0 auto; "><div ref="{{refs.r1}}" style="{{r.r1}}"><p style="margin: 0; font-weight: 500; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Cloud Cost Management</p><h1 style="margin: 16px 0 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(36px, 4.444cqw, 64px); line-height: 1.125; letter-spacing: -0.02em; color: #0F172A">Simplifying cloud cost management through clearer decisions.</h1><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">A cloud cost management platform designed to help teams understand their spending, investigate unexpected changes, and decide which savings are worth pursuing.</p></div></div><div style="max-width: 1200px; margin: 0 auto; margin-top: 56px"><div style="{{heroStyle}}"><img src="01-Savings-Hero.png" alt="Cloud Finance Savings screen showing verified savings, savings over time and savings by team" style="display: block; width: 100%; height: auto; aspect-ratio: 1512 / 945; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);"></div><p style="margin: 16px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Cloud Finance Savings connects opportunities, progress, and verified savings. Figures shown are illustrative.</p></div><div style="max-width: 760px; margin: 0 auto; margin-top: 96px"><div ref="{{refs.r2}}" style="{{r.r2}}"><p style="margin: 0px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">Cloud services help teams run and grow their products, but the bill can be difficult to connect to daily engineering work. FinOps brings finance, engineering, and business teams together to understand that spending and make better decisions.</p><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">I designed a conceptual SaaS product for that decision: understand the cost, investigate the cause, evaluate a change, and act. My work covered research, problem definition, journeys and flows, interface design, a design system, and design iterations.</p><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Product Designer · Independent course project · September–October 2026</p></div></div></section>
+  <!-- GOALS: two goals merge into one pale shared surface, then release into Research -->
+<section ref="{{goalsWrapRef}}" style="position: relative; {{g.wrap}}">
+  <sc-if value="{{g.isPin}}" hint-placeholder-val="{{ true }}">
+    <div ref="{{goalsStickyRef}}" style="position: sticky; top: 0; height: 100vh; overflow: hidden">
+      <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(47, 107, 255, 0.14) 0%, rgba(2, 132, 199, 0.14) 100%); {{g.blue}}"></div>
+      <div style="position: relative; box-sizing: border-box; height: 100%; padding: 72px clamp(24px, 3.333cqw, 48px) 0">
+        <div style="max-width: 760px; margin: 0 auto">
+          <h2 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #0F172A">Make cost insights useful enough to act on</h2>
+          <p style="margin: 24px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">For a saving to be useful, teams need to act with confidence—and the product needs to support that work over time.</p>
+        </div>
+        <div ref="{{goalsSceneRef}}" style="position: relative; max-width: 1024px; margin: 40px auto 0; {{g.scene}}">
+          <div aria-hidden="true" style="position: absolute; top: 0; box-sizing: border-box; border-radius: 50%; background: rgba(2, 132, 199, 0.08); {{g.cA}}"></div>
+          <div aria-hidden="true" style="position: absolute; top: 0; box-sizing: border-box; border-radius: 50%; background: rgba(47, 107, 255, 0.08); {{g.cB}}"></div>
+          <div ref="{{goalsTextRef}}" style="position: absolute; top: 50%; box-sizing: border-box; text-align: center; {{g.tA}}"><div style="display: flex; align-items: center; justify-content: center; gap: 10px"><span aria-hidden="true" style="width: 10px; height: 10px; flex: none; border-radius: 50%; background: #0284C7"></span><p style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 24px; line-height: 1.333; color: #0F172A">User goal</p></div><p style="margin: 12px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 20px; line-height: 1.6; color: #0F172A">Help cloud and FinOps professionals evaluate saving opportunities with enough context to act confidently, without putting reliability or delivery at risk.</p></div>
+          <div style="position: absolute; top: 50%; box-sizing: border-box; text-align: center; {{g.tB}}"><div style="display: flex; align-items: center; justify-content: center; gap: 10px"><span aria-hidden="true" style="width: 10px; height: 10px; flex: none; border-radius: 50%; background: #2F6BFF"></span><p style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 24px; line-height: 1.333; color: #0F172A">Business goal</p></div><p style="margin: 12px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 20px; line-height: 1.6; color: #0F172A">Create a subscription product that becomes part of the team's ongoing cost-management workflow by helping organizations reduce avoidable cloud waste.</p></div>
+          <div style="position: absolute; left: 50%; top: 50%; width: min(760px, 100%); text-align: center; transform: translate(-50%, -50%); pointer-events: none">
+            <div style="{{g.ssH}}"><div style="display: flex; align-items: center; justify-content: center; gap: 12px"><span aria-hidden="true" style="display: flex; flex: none"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0284C7"></span><span style="width: 10px; height: 10px; margin-left: -3px; border-radius: 50%; background: #2F6BFF"></span></span><h3 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">The Sweet Spot</h3></div></div>
+            <div style="{{g.ssB}}"><p style="margin: 16px auto 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">Users can understand a change, decide who should act, and check the result. The business can build lasting value by supporting that complete workflow.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{g.isStatic}}" hint-placeholder-val="{{ false }}">
+    <div style="box-sizing: border-box; padding: 0 clamp(24px, 3.333cqw, 48px)">
+      <div style="max-width: 760px; margin: 0 auto; "><div ref="{{refs.r3}}" style="{{r.r3}}"><h2 style="margin: 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #0F172A">Make cost insights useful enough to act on</h2><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">For a saving to be useful, teams need to act with confidence—and the product needs to support that work over time.</p></div></div>
+      <div style="max-width: 1024px; margin: 40px auto 0; display: flex; flex-wrap: wrap; gap: 16px">
+        <div ref="{{refs.r4}}" style="flex: 1 1 340px; min-width: 0; {{r.r4}}"><div style="box-sizing: border-box; height: 100%; padding: 32px; border-radius: 16px; background: rgba(2, 132, 199, 0.08)"><div style="display: flex; align-items: center; justify-content: flex-start; gap: 10px"><span aria-hidden="true" style="width: 10px; height: 10px; flex: none; border-radius: 50%; background: #0284C7"></span><p style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 24px; line-height: 1.333; color: #0F172A">User goal</p></div><p style="margin: 12px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 20px; line-height: 1.6; color: #0F172A">Help cloud and FinOps professionals evaluate saving opportunities with enough context to act confidently, without putting reliability or delivery at risk.</p></div></div>
+        <div ref="{{refs.r5}}" style="flex: 1 1 340px; min-width: 0; {{r.r5}}"><div style="box-sizing: border-box; height: 100%; padding: 32px; border-radius: 16px; background: rgba(47, 107, 255, 0.08)"><div style="display: flex; align-items: center; justify-content: flex-start; gap: 10px"><span aria-hidden="true" style="width: 10px; height: 10px; flex: none; border-radius: 50%; background: #2F6BFF"></span><p style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 24px; line-height: 1.333; color: #0F172A">Business goal</p></div><p style="margin: 12px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 20px; line-height: 1.6; color: #0F172A">Create a subscription product that becomes part of the team's ongoing cost-management workflow by helping organizations reduce avoidable cloud waste.</p></div></div>
+        <div ref="{{refs.r6}}" style="flex: 1 1 100%; min-width: 0; {{r.r6}}"><div style="box-sizing: border-box; padding: 32px; border-radius: 16px; background: linear-gradient(90deg, rgba(47, 107, 255, 0.14) 0%, rgba(2, 132, 199, 0.14) 100%)"><div style="display: flex; align-items: center; justify-content: flex-start; gap: 12px"><span aria-hidden="true" style="display: flex; flex: none"><span style="width: 10px; height: 10px; border-radius: 50%; background: #0284C7"></span><span style="width: 10px; height: 10px; margin-left: -3px; border-radius: 50%; background: #2F6BFF"></span></span><h3 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">The Sweet Spot</h3></div><p style="margin: 16px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">Users can understand a change, decide who should act, and check the result. The business can build lasting value by supporting that complete workflow.</p></div></div>
+      </div>
+    </div>
+  </sc-if>
+</section>
+  <!-- RESEARCH -->
+<section style="box-sizing: border-box; padding: clamp(96px, 8.889cqw, 128px) clamp(24px, 3.333cqw, 48px) 0px; "><div style="max-width: 760px; margin: 0 auto; "><div ref="{{refs.r10}}" style="{{r.r10}}"><h2 style="margin: 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #0F172A">The savings were visible. The next step wasn’t.</h2><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">I combined secondary research, competitive analysis, and ecosystem research to examine the relationship between cloud spending, engineering priorities, and ownership. I used those inputs to define what a cost decision needs, beyond a saving estimate.</p></div><div ref="{{refs.r11}}" style="{{r.r11}}"><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">AI-simulated interviews added exploratory FinOps and engineering perspectives. I organized those responses into an affinity map and used the synthesis to develop an empathy map and journey maps. These exercises informed design assumptions; they were not interviews with real participants.</p></div></div><div style="max-width: 1200px; margin: 0 auto; margin-top: 32px"><div ref="{{refs.r12}}" style="{{r.r12}}"><div style="padding: clamp(16px, 2.778cqw, 40px); border-radius: 16px; background: #F8FAFC; border: 1px solid #E2E8F0; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);"><img src="08-Affinity-Simulations.png" alt="Affinity cluster of sticky notes from AI-simulated scenarios about what engineers need before trusting a recommendation" style="display: block; width: 100%; height: auto; aspect-ratio: 1604 / 656; box-sizing: border-box; "></div><p style="margin: 14px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569; text-align: center">Exploratory themes from AI-simulated interviews.</p></div></div><div style="max-width: 1024px; margin: 56px auto 0; display: flex; flex-wrap: wrap; gap: 24px"><div ref="{{refs.r7}}" style="flex: 1 1 280px; min-width: 0; {{r.r7}}"><div style="box-sizing: border-box; height: 100%; padding: 26px 24px 28px; border-radius: 14px; background: #F8FAFC; border: 1px solid #E2E8F0"><h4 style="margin: 0; min-height: 64px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.333; color: #0F172A">Connect cost to context</h4><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Secondary research connected cost investigation with resource activity. I placed the affected service, team, timing, and explanation close to the cost change.</p></div></div><div ref="{{refs.r8}}" style="flex: 1 1 280px; min-width: 0; {{r.r8}}"><div style="box-sizing: border-box; height: 100%; padding: 26px 24px 28px; border-radius: 14px; background: #F8FAFC; border: 1px solid #E2E8F0"><h4 style="margin: 0; min-height: 64px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.333; color: #0F172A">Make recommendations credible</h4><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">The simulated scenarios raised questions about reliability, dependencies, and effort. I used those questions to define the evidence a recommendation should provide.</p></div></div><div ref="{{refs.r9}}" style="flex: 1 1 280px; min-width: 0; {{r.r9}}"><div style="box-sizing: border-box; height: 100%; padding: 26px 24px 28px; border-radius: 14px; background: #F8FAFC; border: 1px solid #E2E8F0"><h4 style="margin: 0; min-height: 64px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.333; color: #0F172A">Give the next step an owner</h4><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">The research highlighted ownership and competing priorities. I carried that into visible handoffs and a proposed path for following up on savings.</p></div></div></div><div style="max-width: 760px; margin: 0 auto; margin-top: 96px"><div ref="{{refs.r13}}" style="{{r.r13}}"><h3 style="margin: 0px 0 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">What the comparison made clear.</h3><p style="margin: 16px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">The review established useful patterns to build on—and helped define where to focus this concept.</p></div></div><div style="max-width: 1024px; margin: 40px auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); column-gap: 24px; row-gap: 0"><div ref="{{refs.r14}}" style="display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; min-width: 0; {{r.r14}}"><div style="box-sizing: border-box; height: 100%; display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; padding: 32px; border-radius: 20px; background: #F8FAFC; border: 1px solid #E2E8F0; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05)"><p style="margin: 0; font-weight: 500; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Existing products</p><h4 style="margin: 12px 0 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(22px, 1.667cqw, 24px); line-height: 1.333; color: #0F172A">Patterns worth carrying forward.</h4><p style="margin: 12px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Finout · CloudZero · Vantage · Harness CCM · AWS</p><div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #DCE3EC"><h5 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; color: #0F172A">Context around the cost</h5><p style="margin: 10px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 18px; line-height: 1.556; color: #0F172A">Ownership, work status, and activity offered useful conventions for making cloud costs understandable.</p></div><div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #DCE3EC"><h5 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; color: #0F172A">Evidence around the opportunity</h5><p style="margin: 10px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 18px; line-height: 1.556; color: #0F172A">Recommendation detail and realized savings provided reference patterns for evaluation and follow-up.</p></div></div></div><div ref="{{refs.r15}}" style="display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; min-width: 0; {{r.r15}}"><div style="box-sizing: border-box; height: 100%; display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; padding: 32px; border-radius: 20px; background: linear-gradient(130deg, #F1F5FF 0%, #EEF8FC 100%); border: 1px solid #D8E4FA; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05)"><p style="margin: 0; font-weight: 500; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #2A5FE0">Our design focus</p><h4 style="margin: 12px 0 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(22px, 1.667cqw, 24px); line-height: 1.333; color: #0F172A">Decisions worth making clearer.</h4><p style="margin: 12px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Cloud Cost Management · A conceptual product direction</p><div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #DCE3EC"><h5 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; color: #0F172A">Keep investigation connected</h5><p style="margin: 10px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 18px; line-height: 1.556; color: #0F172A">Bring the affected service, team, timing, and explanation close to the cost change.</p></div><div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #DCE3EC"><h5 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; color: #0F172A">Make the change inspectable</h5><p style="margin: 10px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 18px; line-height: 1.556; color: #0F172A">Place the proposed resource, reasoning, and utilization evidence alongside savings and performance risk.</p></div></div></div></div><div style="max-width: 760px; margin: 0 auto; margin-top: 24px"><div ref="{{refs.r16}}" style="{{r.r16}}"><p style="margin: 0px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Based on secondary and competitive research. This comparison explains the design direction; it does not claim that competing products lack these capabilities or that this concept performs better.</p></div></div></section>
+  <!-- PROBLEM + REQUIREMENTS: one dark scene -->
+<div style="margin-top: clamp(96px, 11.111cqw, 160px); background: #0F172A">
+  <sc-if value="{{p.isPin}}" hint-placeholder-val="{{ true }}">
+    <div ref="{{reqWrapRef}}" style="box-sizing: border-box; padding: clamp(80px, 8.889cqw, 128px) clamp(24px, 3.333cqw, 48px)">
+      <div ref="{{reqStickyRef}}" style="box-sizing: border-box; {{p.sticky}}">
+        <div style="max-width: 860px; margin: 0 auto"><h2 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #FFFFFF; text-wrap: balance">Would you change a working system to lower the bill?</h2><p style="margin: 24px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #FFFFFF; text-wrap: pretty">Cloud engineering leaders need to prioritize savings that justify the engineering effort—without compromising reliability, security, or delivery.</p></div>
+        <div style="position: relative; max-width: 1024px; margin: 56px auto 0">
+        <div aria-hidden="true" style="position: absolute; left: 12.5%; right: 12.5%; top: 31px; height: 2px; background: rgba(255, 255, 255, 0.16)"></div>
+        <div aria-hidden="true" style="position: absolute; left: 12.5%; top: 31px; width: 75%; height: 2px; transform-origin: left; background: linear-gradient(90deg, #2F6BFF 0%, #0284C7 100%); {{p.bar}}"></div>
+        <div ref="{{reqRowRef}}" style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))"><div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n0}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k0}}">01</span></div><div style="margin-top: 24px; {{p.x0}}"><p style="margin: 0; min-height: 28px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t0}}">Cost context</p><p style="margin: 8px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b0}}">Show the cost context.</p></div></div><div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n1}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k1}}">02</span></div><div style="margin-top: 24px; {{p.x1}}"><p style="margin: 0; min-height: 28px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t1}}">Proposed change</p><p style="margin: 8px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b1}}">Explain the proposed change.</p></div></div><div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n2}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k2}}">03</span></div><div style="margin-top: 24px; {{p.x2}}"><p style="margin: 0; min-height: 28px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t2}}">Next action</p><p style="margin: 8px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b2}}">Make the next action clear.</p></div></div><div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n3}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k3}}">04</span></div><div style="margin-top: 24px; {{p.x3}}"><p style="margin: 0; min-height: 28px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t3}}">Verified savings</p><p style="margin: 8px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b3}}">Distinguish potential savings from verified results.</p></div></div></div>
+      </div>
+      </div>
+      <div ref="{{reqSpacerRef}}" aria-hidden="true" style="{{p.spacer}}"></div>
+    </div>
+  </sc-if>
+  <sc-if value="{{p.isFlow}}" hint-placeholder-val="{{ false }}">
+    <div style="box-sizing: border-box; padding: clamp(80px, 8.889cqw, 128px) clamp(24px, 3.333cqw, 48px)">
+      <div style="max-width: 860px; margin: 0 auto"><div ref="{{refs.r17}}" style="{{r.r17}}"><h2 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #FFFFFF; text-wrap: balance">Would you change a working system to lower the bill?</h2><p style="margin: 24px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #FFFFFF; text-wrap: pretty">Cloud engineering leaders need to prioritize savings that justify the engineering effort—without compromising reliability, security, or delivery.</p></div></div>
+      <sc-if value="{{p.isRow}}" hint-placeholder-val="{{ true }}"><div style="position: relative; max-width: 1024px; margin: 56px auto 0">
+        <div aria-hidden="true" style="position: absolute; left: 12.5%; right: 12.5%; top: 31px; height: 2px; background: rgba(255, 255, 255, 0.16)"></div>
+        <div aria-hidden="true" style="position: absolute; left: 12.5%; top: 31px; width: 75%; height: 2px; transform-origin: left; background: linear-gradient(90deg, #2F6BFF 0%, #0284C7 100%); {{p.bar}}"></div>
+        <div ref="{{reqRowRef}}" style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))"><div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n0}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k0}}">01</span></div><div style="margin-top: 24px; {{p.x0}}"><p style="margin: 0; min-height: 28px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t0}}">Cost context</p><p style="margin: 8px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b0}}">Show the cost context.</p></div></div><div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n1}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k1}}">02</span></div><div style="margin-top: 24px; {{p.x1}}"><p style="margin: 0; min-height: 28px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t1}}">Proposed change</p><p style="margin: 8px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b1}}">Explain the proposed change.</p></div></div><div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n2}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k2}}">03</span></div><div style="margin-top: 24px; {{p.x2}}"><p style="margin: 0; min-height: 28px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t2}}">Next action</p><p style="margin: 8px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b2}}">Make the next action clear.</p></div></div><div style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n3}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k3}}">04</span></div><div style="margin-top: 24px; {{p.x3}}"><p style="margin: 0; min-height: 28px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t3}}">Verified savings</p><p style="margin: 8px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b3}}">Distinguish potential savings from verified results.</p></div></div></div>
+      </div></sc-if>
+      <sc-if value="{{p.isCol}}" hint-placeholder-val="{{ false }}"><div ref="{{reqColRef}}" style="max-width: 760px; margin: 40px auto 0"><div style="position: relative; display: flex; gap: 20px; padding-bottom: 32px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n0}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k0}}">01</span></div><div aria-hidden="true" style="position: absolute; left: 31px; top: 64px; bottom: 0; width: 2px; background: rgba(255, 255, 255, 0.24)"></div><div style="padding-top: 16px; {{p.x0}}"><p style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t0}}">Cost context</p><p style="margin: 4px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b0}}">Show the cost context.</p></div></div><div style="position: relative; display: flex; gap: 20px; padding-bottom: 32px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n1}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k1}}">02</span></div><div aria-hidden="true" style="position: absolute; left: 31px; top: 64px; bottom: 0; width: 2px; background: rgba(255, 255, 255, 0.24)"></div><div style="padding-top: 16px; {{p.x1}}"><p style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t1}}">Proposed change</p><p style="margin: 4px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b1}}">Explain the proposed change.</p></div></div><div style="position: relative; display: flex; gap: 20px; padding-bottom: 32px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n2}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k2}}">03</span></div><div aria-hidden="true" style="position: absolute; left: 31px; top: 64px; bottom: 0; width: 2px; background: rgba(255, 255, 255, 0.24)"></div><div style="padding-top: 16px; {{p.x2}}"><p style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t2}}">Next action</p><p style="margin: 4px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b2}}">Make the next action clear.</p></div></div><div style="position: relative; display: flex; gap: 20px; padding-bottom: 0px"><div style="flex: none; width: 64px; height: 64px; box-sizing: border-box; border-radius: 50%; display: flex; align-items: center; justify-content: center; {{p.n3}}"><span style="font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: 18px; line-height: 1; {{p.k3}}">04</span></div><div style="padding-top: 16px; {{p.x3}}"><p style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.4; {{p.t3}}">Verified savings</p><p style="margin: 4px 0 0; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; {{p.b3}}">Distinguish potential savings from verified results.</p></div></div></div></sc-if>
+    </div>
+  </sc-if>
+</div>
+  <!-- PRODUCT FLOW -->
+<section style="box-sizing: border-box; padding: clamp(96px, 11.111cqw, 160px) clamp(24px, 3.333cqw, 48px) 0">
+  <div style="max-width: 760px; margin: 0 auto; "><div ref="{{refs.r18}}" style="{{r.r18}}"><h2 style="margin: 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #0F172A">What happens after a cost catches your attention?</h2><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">I used the mind map and sitemap to organize the product, then journey maps to connect investigation, evaluation, handoff, and follow-up. The Master Product Flow translated that structure into screens and transitions. Below is one connected path, shown at a readable scale.</p></div></div>
+  <sc-if value="{{f.isPin}}" hint-placeholder-val="{{ true }}">
+    <div ref="{{flowWrapRef}}" style="margin-top: 40px; {{f.wrap}}">
+      <div ref="{{flowStickyRef}}" style="position: sticky; top: 0; height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center">
+        <div style="max-width: 760px; width: 100%; margin: 0 auto; position: relative; overflow: hidden; {{f.textBox}}"><div ref="{{ft0Ref}}" style="position: absolute; left: 0; right: 0; top: 0; {{f.s0}}"><h3 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A"><span style="color: #2A5FE0">01 /</span> Choose an opportunity</h3><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Compare potential savings and select a recommendation to investigate.</p></div><div ref="{{ft1Ref}}" style="position: absolute; left: 0; right: 0; top: 0; {{f.s1}}"><h3 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A"><span style="color: #2A5FE0">02 /</span> Review the change, then hand it off</h3><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Compare the current and proposed resource, inspect the evidence, and continue through Slack or Jira.</p></div></div>
+        <div style="margin: 28px auto 0; box-sizing: border-box; padding: 24px; border-radius: 20px; background: rgba(42, 95, 224, 0.05); box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08); {{f.stage}}">
+          <div ref="{{flowBoxRef}}" style="position: relative; aspect-ratio: 1512 / 945"><img src="02-Recommendations-List.png" alt="Recommendations list with the prod-api-cluster opportunity selected" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; {{f.i0}}"><img src="03-Recommendation-Detail.png" alt="Recommendation detail drawer for Resize prod-api-cluster, comparing the current and recommended instance" style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; {{f.i1}}"><div class="cc-divider" role="slider" tabindex="0" aria-label="Recommendation detail reveal" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{f.now}}" aria-valuetext="{{f.nowText}}" onPointerDown="{{f.down}}" onPointerMove="{{f.move}}" onPointerUp="{{f.up}}" onPointerCancel="{{f.up}}" onLostPointerCapture="{{f.up}}" onKeyDown="{{f.key}}" style="position: absolute; top: 0; bottom: 0; width: 40px; z-index: 5; cursor: ew-resize; touch-action: none; user-select: none; outline: none; {{f.div}}"><span aria-hidden="true" style="position: absolute; left: 19px; top: 0; bottom: 0; width: 2px; background: #2A5FE0; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.7)"></span><span class="cc-handle" aria-hidden="true" style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 40px; height: 48px; box-sizing: border-box; border-radius: 24px; background: #FFFFFF; border: 1px solid #CFDBF5; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.15); color: #2A5FE0; display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 1">↔</span></div></div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{f.isStatic}}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 760px; margin: 0 auto; margin-top: 72px"><div ref="{{refs.r20}}" style="{{r.r20}}"><h3 style="margin: 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A"><span style="color: #2A5FE0">01 /</span> Choose an opportunity</h3><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Compare potential savings and select a recommendation to investigate.</p></div></div>
+    <div style="max-width: 1200px; margin: 0 auto; margin-top: 28px"><div ref="{{refs.r21}}" style="{{r.r21}}"><div style="padding: clamp(16px, 2.222cqw, 32px); border-radius: 20px; background: rgba(42, 95, 224, 0.05); box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);"><img src="02-Recommendations-List.png" alt="Recommendations list with the prod-api-cluster opportunity selected" style="display: block; width: 100%; height: auto; aspect-ratio: 1512 / 945; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; "></div></div></div>
+    <div style="max-width: 760px; margin: 0 auto; margin-top: 96px"><div ref="{{refs.r22}}" style="{{r.r22}}"><h3 style="margin: 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A"><span style="color: #2A5FE0">02 /</span> Review the change, then hand it off</h3><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Compare the current and proposed resource, inspect the evidence, and continue through Slack or Jira.</p></div></div>
+    <div style="max-width: 1200px; margin: 0 auto; margin-top: 28px"><div ref="{{refs.r23}}" style="{{r.r23}}"><div style="padding: clamp(16px, 2.222cqw, 32px); border-radius: 20px; background: rgba(42, 95, 224, 0.05); box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);"><img src="03-Recommendation-Detail.png" alt="Recommendation detail drawer for Resize prod-api-cluster, comparing the current and recommended instance" style="display: block; width: 100%; height: auto; aspect-ratio: 1512 / 945; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; "></div></div></div>
+  </sc-if>
+  <div style="max-width: 760px; margin: 0 auto; margin-top: 72px"><div ref="{{refs.r19}}" style="{{r.r19}}"><p style="margin: 0px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">I separated the entry points by intent: Cloud Finance for spend and budget, Anomalies for an unusual change, and Recommendations for a possible action. They share service and team context so users can carry an investigation forward.</p><p style="margin: 20px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">The broader flow includes approval, ownership, and verification. The current concept supports handoff through Slack and Jira; a complete approval workflow remains to be developed.</p></div></div>
+</section>
+  <!-- DESIGN DECISIONS -->
+<section style="box-sizing: border-box; padding: clamp(96px, 11.111cqw, 160px) clamp(24px, 3.333cqw, 48px) 0px; "><div style="max-width: 760px; margin: 0 auto; "><div ref="{{refs.r24}}" style="{{r.r24}}"><h2 style="margin: 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #0F172A">What would make this change worth making?</h2></div></div><div style="max-width: 760px; margin: 0 auto; margin-top: 48px"><div ref="{{refs.r25}}" style="{{r.r25}}"><h3 style="margin: 0px 0 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Show what needs attention before asking users to dig deeper</h3><p style="margin: 20px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Teams need to see whether spending is on track, where the month may end, and what is driving the difference. My early overview separated team spending and savings; later layouts tested a clearer financial hierarchy.</p><p style="margin: 20px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">I brought actual spending, forecast, and budget into one view so users can compare them before drilling down. Detailed analysis moves into dedicated views: a clearer starting point, with an extra step for deeper investigation.</p></div></div><div style="max-width: 1200px; margin: 0 auto; margin-top: 32px"><div ref="{{refs.r26}}" style="{{r.r26}}"><img src="04-Finance-Overview.png" alt="Cloud Finance overview with budget and forecast, spend, and savings" style="display: block; width: 100%; height: auto; aspect-ratio: 1512 / 945; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);"></div><p style="margin: 16px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Current Cloud Finance overview: actual, forecast, and budget share one area, followed by spending and savings. Values are illustrative.</p></div><div style="max-width: 760px; margin: 0 auto; margin-top: clamp(96px, 11.111cqw, 160px)"><div ref="{{refs.r27}}" style="{{r.r27}}"><h3 style="margin: 0px 0 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Give each level of investigation enough room</h3><p style="margin: 20px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">A cost spike is a signal, not an explanation. I explored an inline detail panel, short previews, and an overlay drawer. The inline panel competed with the chart and table for space.</p><p style="margin: 20px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">I chose a staged path: inspect the signal, then open a focused drawer for impact, explanation, timeline, and resources. It adds a step before full detail, but preserves the overview and gives the investigation room. Slack and Jira keep the handoff close.</p></div></div><div style="max-width: 1200px; margin: 0 auto; margin-top: 32px"><div ref="{{refs.r28}}" style="{{r.r28}}"><img src="05-Anomaly-Drawer.png" alt="Anomaly drawer for an EC2 spend increase, with cost impact, explanation and spend over time" style="display: block; width: 100%; height: auto; aspect-ratio: 1512 / 945; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);"></div><p style="margin: 16px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Current anomaly drawer: cost impact, a plain-language explanation, and a timeline lead the investigation.</p></div><div style="max-width: 760px; margin: 0 auto; margin-top: clamp(96px, 11.111cqw, 160px)"><div ref="{{refs.r29}}" style="{{r.r29}}"><h3 style="margin: 0px 0 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Explain the change behind the saving</h3><p style="margin: 20px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Before committing to a saving, teams need to understand what will change and why. I explored current-versus-proposed comparisons to make that judgment concrete.</p><p style="margin: 20px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">I placed the proposed resource beside the current one and supported it with reasoning and utilization evidence. The design makes savings and performance risk visible; effort, dependencies, and rollback still need more work. That is a product gap to validate, not a result already achieved.</p></div></div><div style="max-width: 1200px; margin: 0 auto; margin-top: 32px"><div ref="{{refs.r30}}" style="{{r.r30}}"><img src="03-Recommendation-Detail.png" alt="Recommendation detail drawer comparing the current and recommended instance" style="display: block; width: 100%; height: auto; aspect-ratio: 1512 / 945; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);"></div></div></section>
+  <!-- AUTOMATION -->
+<section style="box-sizing: border-box; padding: clamp(96px, 11.111cqw, 160px) clamp(24px, 3.333cqw, 48px) 0px; "><div style="max-width: 760px; margin: 0 auto; "><div ref="{{refs.r31}}" style="{{r.r31}}"><h2 style="margin: 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #0F172A">Describe the rule. Stay in control.</h2><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">For the product’s automation feature, I designed a path from a natural-language request to an inspectable draft. Trigger, scope, and action remain visible before the user applies the rule.</p></div><div ref="{{refs.r32}}" style="{{r.r32}}"><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">I kept editing and review in the rule builder rather than treating generated output as finished. The assistant flags possible overlaps and missing cooldowns; the user can review suggestions, edit the configuration, or build manually.</p></div></div></section>
+<div style="margin-top: 72px; background: #F8FAFC"><section style="box-sizing: border-box; padding: clamp(72px, 6.667cqw, 96px) clamp(24px, 3.333cqw, 48px) clamp(72px, 6.667cqw, 96px); "><div style="max-width: 760px; margin: 0 auto; margin-top: 0px"><div ref="{{refs.r33}}" style="{{r.r33}}"><h3 style="margin: 0px 0 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Turn a request into a rule you can review.</h3><p style="margin: 16px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">Describe what you want to automate, then inspect the trigger, scope, and action before applying the draft.</p></div></div><div style="max-width: 1200px; margin: 0 auto; margin-top: 32px"><div ref="{{refs.r34}}" style="{{r.r34}}"><img src="06-Create-With-AI.png" alt="AI Rule Assistant: a natural-language request and the generated draft rule with trigger, scope and action" style="display: block; width: 100%; height: auto; aspect-ratio: 1512 / 945; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);"></div></div><div style="max-width: 760px; margin: 0 auto; margin-top: 112px"><div ref="{{refs.r35}}" style="{{r.r35}}"><h3 style="margin: 0px 0 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Build the rule. Bring AI in when needed.</h3><p style="margin: 16px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">Configure the rule manually and use AI review alongside it to check for possible overlaps and missing cooldowns.</p></div></div><div style="max-width: 1200px; margin: 0 auto; margin-top: 32px"><div ref="{{refs.r36}}" style="{{r.r36}}"><img src="07-Manual-Rule-With-AI-Review.png" alt="Manual rule builder with the AI Review panel showing suggestions and a scope check" style="display: block; width: 100%; height: auto; aspect-ratio: 1512 / 945; box-sizing: border-box; border: 1px solid #E2E8F0; border-radius: 12px; box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);"></div></div></section>
+</div>
+<section style="box-sizing: border-box; padding: 72px clamp(24px, 3.333cqw, 48px) 0px; "><div style="max-width: 760px; margin: 0 auto; "><div ref="{{refs.r37}}" style="{{r.r37}}"><h3 style="margin: 0px 0 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Keep potential savings separate from verified results</h3><p style="margin: 16px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Savings moves through identified, approved, implemented, and verified stages. This is the concept's follow-up model; displayed results are sample data.</p></div></div></section>
+  <!-- BUSINESS VALUE -->
+<section style="box-sizing: border-box; padding: clamp(96px, 11.111cqw, 160px) clamp(24px, 3.333cqw, 48px) clamp(96px, 8.889cqw, 128px); "><div style="max-width: 760px; margin: 0 auto; "><div ref="{{refs.r48}}" style="{{r.r48}}"><h2 style="margin: 0; max-width: 760px; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #0F172A">Designed to turn cloud cost insights into <span style="color: #2A5FE0">business value</span>.</h2><p style="margin: 24px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(20px, 1.667cqw, 24px); line-height: 1.5; color: #0F172A">The product connects cost investigation, recommendation review, and savings follow-up around one goal: help teams turn identified opportunities into accountable action. Five KPIs defined during product planning connect the proposed experience to operational and financial value.</p></div></div><div style="max-width: 760px; margin: 0 auto; margin-top: 56px"><div style="border-bottom: 1px solid #E2E8F0"><div ref="{{bvRefs.b0}}" style="padding: 32px 0; border-top: 1px solid #E2E8F0"><div ref="{{refs.r38}}" style="{{r.r38}}"><div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="width: 10px; height: 10px; flex: none; border-radius: 50%; {{bv.d0}}"></span><h3 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Find the cause sooner</h3></div></div><div ref="{{refs.r39}}" style="padding-left: 24px; {{r.r39}}"><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Bring cost impact, explanation, and resources together to help teams identify the cause of a cost issue faster.</p></div></div><div ref="{{bvRefs.b1}}" style="padding: 32px 0; border-top: 1px solid #E2E8F0"><div ref="{{refs.r40}}" style="{{r.r40}}"><div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="width: 10px; height: 10px; flex: none; border-radius: 50%; {{bv.d1}}"></span><h3 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Move from recommendation to decision</h3></div></div><div ref="{{refs.r41}}" style="padding-left: 24px; {{r.r41}}"><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Compare the current and proposed resource with supporting evidence to shorten the path from recommendation to approved action.</p></div></div><div ref="{{bvRefs.b2}}" style="padding: 32px 0; border-top: 1px solid #E2E8F0"><div ref="{{refs.r42}}" style="{{r.r42}}"><div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="width: 10px; height: 10px; flex: none; border-radius: 50%; {{bv.d2}}"></span><h3 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Help recommendations reach implementation</h3></div></div><div ref="{{refs.r43}}" style="padding-left: 24px; {{r.r43}}"><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Connect recommendation detail to work-tool handoff, with the goal of increasing the percentage of recommendations reaching implementation.</p></div></div><div ref="{{bvRefs.b3}}" style="padding: 32px 0; border-top: 1px solid #E2E8F0"><div ref="{{refs.r44}}" style="{{r.r44}}"><div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="width: 10px; height: 10px; flex: none; border-radius: 50%; {{bv.d3}}"></span><h3 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Separate completed work from verified savings</h3></div></div><div ref="{{refs.r45}}" style="padding-left: 24px; {{r.r45}}"><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Track the percentage of completed actions with verified savings, keeping implementation distinct from confirmed financial impact.</p></div></div><div ref="{{bvRefs.b4}}" style="padding: 32px 0; border-top: 1px solid #E2E8F0"><div ref="{{refs.r46}}" style="{{r.r46}}"><div style="display: flex; align-items: center; gap: 14px"><span aria-hidden="true" style="width: 10px; height: 10px; flex: none; border-radius: 50%; {{bv.d4}}"></span><h3 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 500; font-size: clamp(24px, 2.222cqw, 32px); line-height: 1.25; letter-spacing: -0.01em; color: #0F172A">Connect the workflow to financial value</h3></div></div><div ref="{{refs.r47}}" style="padding-left: 24px; {{r.r47}}"><p style="margin: 12px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: clamp(18px, 1.389cqw, 20px); line-height: 1.6; color: #0F172A">Use verified savings over time to assess money saved for the company, rather than relying on potential estimates alone.</p></div></div></div></div><div style="max-width: 760px; margin: 0 auto; margin-top: 40px"><div ref="{{refs.r49}}" style="{{r.r49}}"><p style="margin: 0px 0 0; max-width: 760px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">These are intended outcomes, not measured production results. Figures in the product screens are illustrative.</p></div></div></section>
+  <!-- CLOSING CONTACT -->
+<section style="box-sizing: border-box; padding: clamp(80px, 8.889cqw, 128px) clamp(24px, 3.333cqw, 48px); background: #F8FAFC; border-top: 1px solid #E2E8F0">
+  <div style="max-width: 760px; margin: 0 auto; "><div ref="{{refs.r50}}" style="{{r.r50}}"><h2 style="margin: 0; font-family: 'Manrope', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 3.333cqw, 48px); line-height: 1.167; letter-spacing: -0.015em; color: #0F172A; text-wrap: balance">Thanks for reading. Let’s talk product.</h2></div></div>
+  <sc-if value="{{showControls}}" hint-placeholder-val="{{ true }}">
+    <div style="max-width: 760px; margin: 32px auto 0"><p style="display: inline-block; margin: 0; padding: 10px 14px; border: 1px dashed #94A3B8; border-radius: 8px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #475569">Prototype note: connect your verified contact link here in Framer.</p></div>
+  </sc-if>
+</section>
+</div>
+  <!-- prototype-only controls, not part of the case study -->
+  <sc-if value="{{showControls}}" hint-placeholder-val="{{ true }}">
+    <div style="position: fixed; right: 16px; bottom: 16px; z-index: 10; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 8px 8px 8px 14px; border-radius: 10px; background: #0F172A; color: #FFFFFF; font-size: 13px; line-height: 1.3">
+      <span style="color: #E2E8F0">Hero parallax {{parallaxState}}</span>
+      <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; min-height: 44px">
+        <input type="checkbox" checked="{{reduced}}" onChange="{{toggleReduced}}" style="width: 18px; height: 18px; accent-color: #2A5FE0">
+        Reduced motion
+      </label>
+      <button type="button" onClick="{{replay}}" style="min-height: 44px; padding: 0 14px; border-radius: 8px; border: 1px solid #475569; background: transparent; color: #FFFFFF; font: 500 13px 'IBM Plex Sans', system-ui, sans-serif; cursor: pointer">Back to top &amp; replay</button>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"flat":{"editor":"boolean","default":false},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var mq = (typeof window !== 'undefined' && window.matchMedia) ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    this.state = {
+      vis: {}, delay: {}, ready: false, heroY: 0, reduced: mq ? mq.matches : false, width: 1440, rootH: 900,
+      goalP: 0, gTop: 300, gTH: 210,
+      stepP: 0, reqH: 520, lp: 0, colLit: -1,
+      flowP: 0, fTH: 130,
+      bvSeen: 0, rv: 0
+    };
+    this.GL = 1400;  // Goals local scroll
+    this.RL = 800;   // Problem + Requirements local scroll
+    this.FL = 1200;  // Product Flow local scroll
+    this.ids = ["r1", "r2", "r3", "r4", "r5", "r6", "r7", "r8", "r9", "r10", "r11", "r12", "r13", "r14", "r15", "r16", "r17", "r18", "r19", "r20", "r21", "r22", "r23", "r24", "r25", "r26", "r27", "r28", "r29", "r30", "r31", "r32", "r33", "r34", "r35", "r36", "r37", "r38", "r39", "r40", "r41", "r42", "r43", "r44", "r45", "r46", "r47", "r48", "r49", "r50"];
+    this.types = {"r1": "text", "r2": "text", "r3": "text", "r4": "text", "r5": "text", "r6": "text", "r7": "text", "r8": "text", "r9": "text", "r10": "text", "r11": "text", "r12": "image", "r13": "text", "r14": "text", "r15": "text", "r16": "text", "r17": "text", "r18": "text", "r19": "text", "r20": "text", "r21": "image", "r22": "text", "r23": "image", "r24": "text", "r25": "text", "r26": "image", "r27": "text", "r28": "image", "r29": "text", "r30": "image", "r31": "text", "r32": "text", "r33": "text", "r34": "image", "r35": "text", "r36": "image", "r37": "text", "r38": "text", "r39": "text", "r40": "text", "r41": "text", "r42": "text", "r43": "text", "r44": "text", "r45": "text", "r46": "text", "r47": "text", "r48": "text", "r49": "text", "r50": "text"};
+    this.els = {};
+    this.refFns = {};
+    var self = this;
+    this.ids.forEach(function (id) { self.refFns[id] = function (el) { self.els[id] = el; }; });
+    var keep = function (name) { return function (el) { self[name] = el; }; };
+    this.rootRef = keep('root');
+    this.goalsWrapRef = keep('goalsWrapEl'); this.goalsStickyRef = keep('goalsStickyEl');
+    this.goalsSceneRef = keep('goalsSceneEl'); this.goalsTextRef = keep('goalsTextEl');
+    this.reqWrapRef = keep('reqWrapEl'); this.reqStickyRef = keep('reqStickyEl'); this.reqSpacerRef = keep('reqSpacerEl');
+    this.reqRowRef = keep('reqRowEl'); this.reqColRef = keep('reqColEl');
+    this.flowWrapRef = keep('flowWrapEl'); this.flowStickyRef = keep('flowStickyEl');
+    this.ft0Ref = keep('ft0El'); this.ft1Ref = keep('ft1El'); this.flowBoxRef = keep('flowBoxEl');
+    // Divider: scrolling and dragging drive the same reveal value.
+    this.dragging = false; this.anchor = null; this.lastS = 0;
+    this.fromPointer = function (e) {
+      if (!self.flowBoxEl) return;
+      var r = self.flowBoxEl.getBoundingClientRect();
+      self.setState({ rv: self.clamp((e.clientX - r.left) / r.width) });
+    };
+    this.onDivDown = function (e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      self.dragging = true;
+      try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+      self.fromPointer(e); e.preventDefault();
+    };
+    this.onDivMove = function (e) { if (self.dragging) self.fromPointer(e); };
+    this.onDivUp = function () {
+      if (!self.dragging) return;
+      self.dragging = false;
+      self.anchor = { f: self.lastS, p: self.state.rv };          // later scrolling continues from here
+    };
+    this.onDivKey = function (e) {
+      var v = self.state.rv, st = e.shiftKey ? 0.1 : 0.025, n;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowUp') n = v + st;
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') n = v - st;
+      else if (e.key === 'Home') n = 0; else if (e.key === 'End') n = 1; else return;
+      e.preventDefault(); n = self.clamp(n);
+      self.anchor = { f: self.lastS, p: n };
+      self.setState({ rv: n });
+    };
+    this.bvEls = {}; this.bvRefs = {};
+    [0, 1, 2, 3, 4].forEach(function (i) { self.bvRefs['b' + i] = function (el) { self.bvEls[i] = el; }; });
+    this.onScroll = function () {
+      if (self.raf || !self.root) return;
+      self.raf = window.requestAnimationFrame(function () { self.raf = null; self.tick(); });
+    };
+  }
+  // Reveal lines, as a share of the viewport height: text at 85%, images at 90%. Reversible: an element
+  // hides again only when it drops back below its own line at the bottom of the viewport.
+  line(id) { return this.types[id] === 'image' ? 0.9 : 0.85; }
+  clamp(v) { return Math.max(0, Math.min(1, v)); }
+  sm(a, b, x) { var t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); }
+  // Progress through a sticky interval: the stuck element closes in on the end of its scroll room.
+  stickyP(endEl, stickyEl, len) {
+    if (!endEl || !stickyEl) return null;
+    var travel = endEl.getBoundingClientRect().bottom - stickyEl.getBoundingClientRect().bottom;
+    return this.clamp(1 - travel / len);
+  }
+  tick() {
+    var self = this, S = this.state;
+    if (!this.root) return;
+    var rb = this.root.getBoundingClientRect();
+    var vh = this.root.clientHeight, w = this.root.clientWidth;
+    var next = {};
+    var still = this.props.flat || S.reduced;
+    // 1. Reversible reveals.
+    if (!still) {
+      var vis = Object.assign({}, S.vis), delay = Object.assign({}, S.delay), entering = [], changed = false;
+      this.ids.forEach(function (id) {
+        var el = self.els[id];
+        var v = true;
+        if (el) { var t = el.getBoundingClientRect().top - rb.top; v = t < vh * self.line(id); }
+        if (v !== !!S.vis[id]) {
+          changed = true; vis[id] = v;
+          if (v) entering.push({ id: id, top: el ? el.getBoundingClientRect().top : 0 }); else delay[id] = 0;
+        }
+      });
+      if (changed) {
+        entering.sort(function (a, b) { return a.top - b.top; });
+        var anyText = entering.some(function (e) { return self.types[e.id] === 'text'; }), t = 0;
+        entering.forEach(function (e) {
+          if (self.types[e.id] === 'image') delay[e.id] = anyText ? 140 : 0;
+          else { delay[e.id] = Math.min(t * 80, 160); t++; }
+        });
+        next.vis = vis; next.delay = delay;
+      }
+    }
+    // 2. Hero parallax.
+    var on = !this.props.flat && !S.reduced && w >= 810;
+    var y = on ? -0.04 * Math.min(this.root.scrollTop || 0, 800) : 0;
+    if (Math.abs(y - S.heroY) > 0.1) next.heroY = y;
+    if (w !== S.width) next.width = w;
+    if (vh !== S.rootH) next.rootH = vh;
+    // 3. Goals scene.
+    var gp = this.stickyP(this.goalsWrapEl, this.goalsStickyEl, this.GL);
+    if (gp !== null) {
+      if (Math.abs(gp - S.goalP) > 0.001) next.goalP = gp;
+      if (this.goalsSceneEl) {
+        var gt = Math.round(this.goalsSceneEl.getBoundingClientRect().top - this.goalsStickyEl.getBoundingClientRect().top);
+        if (Math.abs(gt - S.gTop) > 1) next.gTop = gt;
+      }
+      if (this.goalsTextEl) { var th = this.goalsTextEl.offsetHeight; if (Math.abs(th - S.gTH) > 1) next.gTH = th; }
+    }
+    // 4. Problem + Requirements.
+    if (this.reqStickyEl) {
+      var rp = this.stickyP(this.reqSpacerEl, this.reqStickyEl, this.RL);
+      if (rp !== null && Math.abs(rp - S.stepP) > 0.001) next.stepP = rp;
+      var rh = this.reqStickyEl.offsetHeight; if (Math.abs(rh - S.reqH) > 2) next.reqH = rh;
+    } else if (this.reqRowEl) {
+      var rt = this.reqRowEl.getBoundingClientRect().top - rb.top;
+      var lp = this.clamp((vh * 0.8 - rt) / (vh * 0.35));
+      if (Math.abs(lp - S.lp) > 0.002) next.lp = lp;
+    }
+    if (this.reqColEl) {
+      var lit = -1;
+      Array.prototype.forEach.call(this.reqColEl.children, function (c, i) { if (c.getBoundingClientRect().top - rb.top < vh * 0.7) lit = i; });
+      if (lit !== S.colLit) next.colLit = lit;
+    }
+    // 5. Product Flow.
+    var fp = this.stickyP(this.flowWrapEl, this.flowStickyEl, this.FL);
+    if (fp !== null && Math.abs(fp - S.flowP) > 0.001) next.flowP = fp;
+    if (fp !== null && !this.dragging) {
+      // Reading hold on the list (0–30%), wipe (30–72%), hold on the detail. A manual position re-anchors the
+      // mapping so further scrolling continues from it and still reaches 0 / 1 at the ends of the interval.
+      var sv = this.sm(0.3, 0.72, fp), A = this.anchor, val = sv;
+      if (A && (fp <= 0 || fp >= 1)) { this.anchor = A = null; }   // leaving the scene ends the manual offset
+      if (A) {
+        var END = 0.72;
+        if (fp >= A.f) val = A.f >= END ? 1 : A.p + (1 - A.p) * this.clamp((fp - A.f) / (END - A.f));
+        else val = A.p * this.clamp(fp / Math.max(0.0001, A.f));
+      }
+      this.lastS = fp;
+      if (Math.abs(val - S.rv) > 0.0005) next.rv = val;
+    }
+    if (this.ft0El && this.ft1El) {
+      var fh = Math.max(this.ft0El.offsetHeight, this.ft1El.offsetHeight);
+      if (Math.abs(fh - S.fTH) > 1) next.fTH = fh;
+    }
+    // 6. Business value: the row nearest the middle of the viewport is the active outcome.
+    var seen = 0;
+    for (var bi = 0; bi < 5; bi++) {
+      var be = this.bvEls[bi]; if (!be) continue;
+      if (be.getBoundingClientRect().top + 32 - rb.top <= vh * 0.68) seen = bi + 1;
+    }
+    if (seen !== S.bvSeen) next.bvSeen = seen;
+    if (Object.keys(next).length) this.setState(next);
+  }
+  componentDidMount() {
+    var self = this;
+    window.addEventListener('resize', this.onScroll);
+    setTimeout(function () { self.setup(); }, 0);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onScroll);
+    if (this.raf) window.cancelAnimationFrame(this.raf);
+  }
+  setup() {
+    var self = this;
+    if (!this.root) return;
+    var vis = {}, rb = this.root.getBoundingClientRect(), vh = this.root.clientHeight;
+    this.ids.forEach(function (id) {
+      var el = self.els[id];
+      vis[id] = !el || (el.getBoundingClientRect().top - rb.top < vh * self.line(id));
+    });
+    this.setState({ width: this.root.clientWidth, rootH: vh, vis: vis, delay: {}, ready: false }, function () {
+      self.tick();
+      setTimeout(function () { self.setState({ ready: true }); self.tick(); }, 60);
+    });
+  }
+  renderVals() {
+    var self = this;
+    var S = this.state;
+    var flat = !!this.props.flat;
+    var still = flat || S.reduced;
+    var phone = S.width < 810;
+    var ease = 'cubic-bezier(0.22, 1, 0.36, 1)';
+    var smooth = function (a, b, x) { var t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+    var lerp = function (a, b, t) { return a + (b - a) * t; };
+    var px = function (v) { return v.toFixed(1) + 'px'; };
+    var vh = S.rootH || 900, W0 = S.width || 1440;
+    // Reveals.
+    var r = {};
+    this.ids.forEach(function (id) {
+      var img = self.types[id] === 'image';
+      var shown = still || S.vis[id] !== false;
+      var d = (img ? 16 : 10) * (phone ? 0.6 : 1);
+      var dur = img ? 600 : 450;
+      var tr = (still || !S.ready) ? 'none' : ('opacity ' + dur + 'ms ' + ease + ' ' + (S.delay[id] || 0) + 'ms, transform ' + dur + 'ms ' + ease + ' ' + (S.delay[id] || 0) + 'ms');
+      r[id] = 'opacity:' + (shown ? 1 : 0) + ';transform:translateY(' + (shown ? 0 : d) + 'px);transition:' + tr;
+    });
+    // ---- Goals: compact circles sized around the readable text, pale merge, pale expansion, Sweet Spot.
+    var TW = 300;
+    var D = Math.ceil(2 * (Math.sqrt(Math.pow(TW / 2, 2) + Math.pow(S.gTH / 2, 2)) + 22));
+    var room = Math.min(1024, W0 - 96);
+    var pinned = !still && !phone && W0 >= 1000 && (2 * D + 48) <= room && (S.gTop + D + 24) <= vh;
+    var P = pinned ? S.goalP : 1;
+    var GAP = 48;
+    var d1 = TW + 40;                                     // closest approach while both paragraphs are shown
+    var mA = smooth(0.2, 0.46, P);                        // approach, after a reading hold
+    var tO = 1 - smooth(0.46, 0.53, P);                   // text hands off before any overlap
+    var mM = smooth(0.52, 0.65, P);                       // resolve into one circle
+    var dd = lerp(lerp(D + GAP, d1, mA), 0, mM);
+    var pale = 1 - smooth(0.6, 0.68, P);
+    var cy = S.gTop + D / 2;
+    var far = Math.sqrt(Math.pow(W0 / 2, 2) + Math.pow(Math.max(cy, vh - cy), 2)) + 4;
+    var ex = smooth(0.66, 0.82, P);
+    var R = ex > 0 ? lerp(D / 2, far, ex) : (D / 2) * smooth(0.54, 0.66, P);
+    var hA = smooth(0.78, 0.85, P), bA = smooth(0.8, 0.88, P);
+    var circ = 'width:' + D + 'px;height:' + D + 'px;opacity:' + pale.toFixed(3) + ';';
+    var g = {
+      isPin: pinned, isStatic: !pinned,
+      wrap: pinned ? 'padding-top: calc(clamp(96px, 11.111cqw, 160px) - 72px); height: calc(100vh + ' + this.GL + 'px)' : 'padding-top: clamp(96px, 11.111cqw, 160px)',
+      blue: 'clip-path: circle(' + px(Math.max(0, R)) + ' at 50% ' + px(cy) + ')',
+      scene: 'height:' + D + 'px',
+      cA: circ + 'left:calc(50% - ' + px(dd / 2 + D / 2) + ')',
+      cB: circ + 'left:calc(50% + ' + px(dd / 2 - D / 2) + ')',
+      tA: 'width:' + TW + 'px;left:calc(50% - ' + px(dd / 2 + TW / 2) + ');transform:translateY(-50%);opacity:' + tO.toFixed(3),
+      tB: 'width:' + TW + 'px;left:calc(50% + ' + px(dd / 2 - TW / 2) + ');transform:translateY(-50%);opacity:' + tO.toFixed(3),
+      ssH: 'opacity:' + hA.toFixed(3) + ';transform:translateY(' + px((1 - hA) * 10) + ')',
+      ssB: 'opacity:' + bA.toFixed(3) + ';transform:translateY(' + px((1 - bA) * 10) + ')'
+    };
+    // ---- Problem + Requirements: one dark scene, pinned when it fits.
+    var reqPin = !still && !phone && (S.reqH + 160) <= vh;
+    var LP;
+    if (still) LP = 1;
+    else if (reqPin) LP = this.clamp((S.stepP - 0.15) / 0.7);      // hold, 01 → 04, hold
+    else LP = S.lp;
+    var cur;
+    if (phone && !still) cur = Math.max(0, S.colLit);
+    else cur = Math.min(3, Math.floor(LP * 3 + 0.001));
+    var p = {
+      isPin: reqPin, isFlow: !reqPin, isRow: !phone, isCol: phone,
+      sticky: 'position: sticky; top: calc(50vh - ' + Math.round(S.reqH / 2) + 'px); padding: 0',
+      spacer: 'height: ' + this.RL + 'px',
+      bar: 'transform:scaleX(' + (phone ? 0 : LP).toFixed(3) + ')'
+    };
+    p.sticky = reqPin ? p.sticky : '';
+    var tr = ';transition:border-color 300ms ' + ease + ', background-color 300ms ' + ease + ', color 300ms ' + ease + ', transform 300ms ' + ease;
+    for (var i = 0; i < 4; i++) {
+      var reached = still || i <= cur, current = !still && i === cur;
+      p['n' + i] = 'background-color:#142650;' + (reached ? 'border:2px solid #2F6BFF;box-shadow:0 0 0 6px rgba(47, 107, 255, 0.16)' : 'border:2px solid rgba(255, 255, 255, 0.28);box-shadow:none') + ';transform:scale(' + (current ? 1.06 : 1) + ')' + tr;
+      p['k' + i] = 'color:' + (reached ? '#FFFFFF' : '#CBD5E1') + tr;
+      p['t' + i] = 'color:' + (current || still ? '#FFFFFF' : reached ? '#E2E8F0' : '#CBD5E1') + tr;
+      p['b' + i] = 'color:' + (current || still ? '#E2E8F0' : reached ? '#CBD5E1' : '#94A3B8') + tr;
+      p['x' + i] = 'transform:translateY(' + (current ? -4 : 0) + 'px)' + tr;
+    }
+    // ---- Product Flow: text above a wide screen; scroll drives the beat.
+    var flowPin = !still && !phone && vh >= 640;
+    // Reading hold on the list (0–30%), right-to-left masked reveal of the detail (30–72%), hold on the detail.
+    var rv = flowPin ? S.rv : 0;
+    var outT = smooth(0.3, 0.48, rv), inT = smooth(0.52, 0.7, rv);   // old text clears first, then the new text
+    var stageH = vh - S.fTH - 28 - 96;
+    var stageW = Math.round(Math.min(1200, W0 - 96, (stageH - 48) * 1512 / 945 + 48));
+    var fe = 'transition:opacity 400ms ' + ease + ', transform 400ms ' + ease;
+    var f = {
+      isPin: flowPin, isStatic: !flowPin,
+      wrap: 'height: calc(100vh + ' + this.FL + 'px)',
+      textBox: 'height:' + S.fTH + 'px',
+      stage: 'width:' + stageW + 'px;max-width:100%',
+      s0: 'clip-path:inset(0 0 0 ' + (outT * 100).toFixed(2) + '%);transform:translateX(' + px(10 * outT) + ')',
+      s1: 'clip-path:inset(0 ' + ((1 - inT) * 100).toFixed(2) + '% 0 0);transform:translateX(' + px(-10 * (1 - inT)) + ')',
+      i0: 'opacity:1',
+      i1: 'clip-path:inset(0 ' + ((1 - rv) * 100).toFixed(2) + '% 0 0)',
+      div: 'left:calc(' + (rv * 100).toFixed(2) + '% - 20px)',
+      now: String(Math.round(rv * 100)),
+      nowText: Math.round(rv * 100) + ' percent of the detail screen revealed',
+      down: this.onDivDown, move: this.onDivMove, up: this.onDivUp, key: this.onDivKey
+    };
+    // ---- Business value: one small, consistent accent on the outcome being read.
+    var bv = {};
+    var nSeen = still ? 5 : S.bvSeen;
+    for (var j = 0; j < 5; j++) {
+      var on2 = j < nSeen;
+      bv['d' + j] = 'background:' + (on2 ? '#2A5FE0' : '#CBD5E1') + ';transform:scale(' + (on2 ? 1 : 0.8) + ');box-shadow:' + (!still && on2 && j === nSeen - 1 ? '0 0 0 6px rgba(42, 95, 224, 0.10)' : '0 0 0 0 rgba(42, 95, 224, 0)')
+        + ';transition:background-color 220ms ease, box-shadow 220ms ease, transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1)';
+    }
+    return {
+      rootRef: this.rootRef, onScroll: this.onScroll,
+      goalsWrapRef: this.goalsWrapRef, goalsStickyRef: this.goalsStickyRef, goalsSceneRef: this.goalsSceneRef, goalsTextRef: this.goalsTextRef,
+      reqWrapRef: this.reqWrapRef, reqStickyRef: this.reqStickyRef, reqSpacerRef: this.reqSpacerRef, reqRowRef: this.reqRowRef, reqColRef: this.reqColRef,
+      flowWrapRef: this.flowWrapRef, flowStickyRef: this.flowStickyRef, flowBoxRef: this.flowBoxRef, ft0Ref: this.ft0Ref, ft1Ref: this.ft1Ref,
+      bvRefs: this.bvRefs,
+      g: g, p: p, f: f, bv: bv,
+      rootScroll: flat ? '' : 'height: 100vh; overflow-y: auto; overscroll-behavior: contain',
+      refs: this.refFns,
+      r: r,
+      heroStyle: 'transform:translateY(' + S.heroY.toFixed(1) + 'px);will-change:transform',
+      showControls: false,
+      parallaxState: (S.reduced || phone) ? 'off' : ('↑ ' + Math.round(-S.heroY) + ' px'),
+      reduced: S.reduced,
+      toggleReduced: function () { self.setState({ reduced: !S.reduced, heroY: 0 }, function () { self.setup(); }); },
+      replay: function () { if (self.root) self.root.scrollTop = 0; setTimeout(function () { self.setup(); }, 60); }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
